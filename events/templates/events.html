@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Eventos{% endblock %}
+
+{% block content %}
+    <form action="{% url 'create_event' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Nome do Evento:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="description">Descri o do Evento:</label>
+        <input type="text" id="description" name="description"><br><br>
+        <label for="date">Data do Evento:</label>
+        <input type="date" id="date" name="date"><br><br>
+        <input type="submit" value="Criar Evento">
+    </form>
+{% endblock %}

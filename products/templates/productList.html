@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+  {% if products %}
+    {% for product in products %}
+      <a href="{% url 'product_detail' product.id %}"><p>{{ product.name }} - {{ product.price }}</p></a>
+    {% endfor %}
+  {% else %}
+    <p>No products found.</p>
+  {% endif %}
+{% endblock %}
