@@ -1,0 +1,9 @@
+.about-container {
+    padding: 100px 2rem;
+    color: white;
+}
+
+.about-container p {
+    font-size: 1.2em;
+    max-width: 70%;
+}

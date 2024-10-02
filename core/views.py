@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import Contact
+import datetime
 
 def home(request):
-    template = 'home.html'
-    return render(request, template)
+    """View for the home page."""
+    year = datetime.date.today().year
+    context = {"year": year}
+    return render(request, "home.html", context)
 
 def contact(request):
     if request.method == 'POST':
@@ -15,4 +18,8 @@ def contact(request):
         contact.save()
 
     template = 'contact.html'
+    return render(request, template)
+
+def about(request):
+    template = 'about.html'
     return render(request, template)

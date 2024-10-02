@@ -1,0 +1,66 @@
+.contact-form-container {
+    padding: 64px 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.contact-form-container .contact-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 50%;
+}
+
+.contact-form-container .contact-intro .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-container .contact-intro .messages .message {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact-form-container .contact-form {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    min-width: 30%;
+    gap: 20px;
+}
+
+.contact-form-container .contact-form input[type="submit"] {
+    background-color: #1F3BFF;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-form-container .contact-form input[type="submit"]:hover {
+    background-color: #3a227e;
+    cursor: pointer;
+}
+
+.contact-form-container .contact-form .input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container .contact-form .input-container input,
+.contact-form-container .contact-form .input-container textarea {
+    padding: 6px;
+    border: 1px solid #80808073;
+    border-radius: 4px;
+    max-width: 100%;
+    resize: none;
+}

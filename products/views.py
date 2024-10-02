@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Product
 
 def home(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(is_active=True)
     return render(request, 'productList.html', {'products': products})
 
 def product_detail(request, product_id):

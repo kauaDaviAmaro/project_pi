@@ -1,2 +1,14 @@
 @import 'config.css';
 @import 'navbar.css';
+@import 'footer.css';
+
+body {
+    background: radial-gradient(circle at 30% 30%, #1F3BFF, #6C38FF, #D359FF);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+main {
+    min-height: calc(100vh - 64px);
+}
