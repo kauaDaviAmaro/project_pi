@@ -1,0 +1,20 @@
+.product-detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 64px;
+}
+
+.product-detail-container .image-container {
+    width: 40%;
+}
+
+.product-detail-container .info-container {
+    color: white;
+}
+
+.product-detail-container .info-container .options: {
+    display: flex;
+    justify-content: space-evenly;
+}

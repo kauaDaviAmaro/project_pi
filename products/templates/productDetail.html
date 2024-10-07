@@ -1,11 +1,61 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ product.name }}{% endblock %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/productDetail.css' %}" />
+{% endblock %}
+
+{% block title %}{{ product.name }} - Detalhes{% endblock %}
 
 {% block content %}
-    <h1>{{ product.name }}</h1>
-    <p>{{ product.description }}</p>
-    <p>Price: {{ product.price }}</p>
-    <p>Quantity: {{ product.quantity }}</p>
-    {% comment %} <p>Image: <img src="{{ product.image.url }}" alt=""></p> {% endcomment %}
+<div class="product-detail-container">
+    <div class="image-container">
+        <img src="/media/{{ product.image }}" alt="{{ product.name }}" />
+    </div>
+    <div class="info-container">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <p>Preço: R$ {{ product.price }}</p>
+        <p>Quantidade: {{ product.quantity }}</p>
+        <p>Opçoes:</p>
+        <div class="container-options">
+            <div class="options-title">
+                <h2>Cores:</h2>
+            </div>
+            <div class="options">
+                <select name="color" id="color">
+                    <option value="">Selecione a cor</option>
+                    {% for choice in product.colors %}
+                    <option value="{{ choice.id }}">{{ choice.display }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="options-title">
+                <h2>Tamanhos:</h2>
+            </div>
+            <div class="options">
+                <select name="size" id="size">
+                    <option value="">Selecione o tamanho</option>
+                    {% for choice in product.sizes %}
+                    <option value="{{ choice.id }}">{{ choice.display }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="options-title">
+                <h2>Materiais:</h2>
+            </div>
+            <div class="options">
+                <select name="material" id="material">
+                    <option value="">Selecione o material</option>
+                    {% for choice in product.materials %}
+                    <option value="{{ choice.id }}">{{ choice.display }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}
