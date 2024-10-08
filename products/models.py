@@ -8,3 +8,4 @@ class Product(models.Model):
     quantity = models.IntegerField()
     is_active = models.BooleanField()
     image = models.ImageField(upload_to='products/', null=True, blank=True)
+    options = models.JSONField(null=True, blank=True)

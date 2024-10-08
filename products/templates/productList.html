@@ -20,7 +20,7 @@
                 <img src="/media/{{ product.image }}" />
               </div>
               <h2>{{ product.name }}</h2>
-              <p>{{ product.price }}</p>
+              <p>R$ {{ product.price | floatformat:2 }}</p>
             </div>
           </a>
         {% endfor %}

@@ -3,5 +3,9 @@
 {% block title %}Eventos{% endblock %}
 
 {% block content %}
-    Eventos 
+    <ul>
+    {% for event in events %}
+        <li>{{ event.name }} - {{ event.date }} - {{ event.time }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}

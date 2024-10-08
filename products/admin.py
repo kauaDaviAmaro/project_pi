@@ -5,7 +5,10 @@ from django.utils.safestring import mark_safe
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'descricao', 'preco', 'quantidade', 'esta_ativo', 'imagem')
+    list_display = ('nome', 'descricao', 'preco', 'quantidade', 'esta_ativo', 'imagem', 'opcoes')
+
+    def opcoes(self, obj):
+        return mark_safe('<a href="/admin/products/product/{}/change/">Editar</a>'.format(obj.id))
 
     def nome(self, obj):
         return obj.name
